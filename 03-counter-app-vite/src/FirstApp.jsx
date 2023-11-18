@@ -6,7 +6,7 @@
 
 export const FirstApp = () => {
   return (
-    <h1>Helloww World!!</h1>
+    <h1>My first App :'D!!</h1>
   )
 }
 
