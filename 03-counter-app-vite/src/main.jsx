@@ -5,7 +5,7 @@ import {HellowWorld} from './HelloWorldApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        {/* <FirstApp></FirstApp> */}
-        <HellowWorld></HellowWorld>
+        <FirstApp></FirstApp>
+        {/* <HellowWorld></HellowWorld> */}
     </React.StrictMode>
 )
