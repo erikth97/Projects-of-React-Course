@@ -1,14 +1,14 @@
 
 
-export const FirstApp = () => {
+export const FirstApp = ({title, subTitle}) => {
 
-
+//Console.log(props);
 
   return (
     <>
-      <h1>Erik</h1>
-      
-      <p>Lorem ipsut</p>
+      <h1>{title}</h1>
+
+      <p>{subTitle}</p>
     </>
   )
 }
