@@ -1,9 +1,18 @@
 
+describe('Pruebas eb <DemoComponent />', () => { 
+    
+    test ('Esta prueba no debe de fallar', () => {
 
+        // Inicializacion
+        const message1 = 'Hola Mundi';
 
-test ('Esta prueba no debe de fallar', () => {
+        // Estimulo
+        const message2 = message1.trim();
 
-    if (1 === 0) {
-        throw new Error('No se puede dividir entre cero');
-    }
+        // Observar el comportamineto
+        expect( message1 ).toBe( message2 );
+
+    })
+
 })
+
