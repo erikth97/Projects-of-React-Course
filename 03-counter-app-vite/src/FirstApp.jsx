@@ -24,6 +24,6 @@ FirstApp.propTypes = {
 FirstApp.defaultProps = {
   name: 'Erik Tamayo',
   subTitle: 'ND',
-  title: 'ND',
+  // title: 'ND',
 }
 
