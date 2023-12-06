@@ -6,8 +6,11 @@ export const GiftExpertApp = () => {
     const [ categories, setCategories ] = useState([ 'One Punch', 'Dragon Ball' ]);
 
     const onAddCategory = ( newCategory ) => {
+
+        if ( categories.includes(newCategory) ) return;
+        
         // categories.push(newCategory);
-        setCategories([ newCategory, ...categories]);
+        setCategories([ newCategory, ...categories ]);
         // setCategories([ 'Valorant', ...categories ]);
     }
 
@@ -27,7 +30,7 @@ export const GiftExpertApp = () => {
         <button onClick={ onAddCategory }>Agregar</button>
         <ol>
             {
-                categories.map( category => {
+                categories.map( ( category ) => {
                     return <li key={ category }>{ category }</li>
                 })
             }
