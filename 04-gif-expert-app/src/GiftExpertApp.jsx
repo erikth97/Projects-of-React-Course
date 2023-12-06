@@ -5,10 +5,10 @@ export const GiftExpertApp = () => {
 
     const [ categories, setCategories ] = useState([ 'One Punch', 'Dragon Ball' ]);
 
-    const onAddCategory = () => {
-        //
-        setCategories([ 'Valorant', ...categories ]);
-        //
+    const onAddCategory = ( newCategory ) => {
+        // categories.push(newCategory);
+        setCategories([ newCategory, ...categories]);
+        // setCategories([ 'Valorant', ...categories ]);
     }
 
 
@@ -18,7 +18,10 @@ export const GiftExpertApp = () => {
         <h1>Gif App</h1>
 
         {/* Input */}
-        <AddCategory setCategories={ setCategories } />
+        <AddCategory 
+            // setCategories={ setCategories } 
+            onNewCategoty={ (value) => onAddCategory(value) }
+        />
 
         {/* Listado de Gif */}
         <button onClick={ onAddCategory }>Agregar</button>
