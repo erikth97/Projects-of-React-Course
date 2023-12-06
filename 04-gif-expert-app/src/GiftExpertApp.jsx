@@ -18,7 +18,7 @@ export const GiftExpertApp = () => {
         <h1>Gif App</h1>
 
         {/* Input */}
-        <AddCategory />
+        <AddCategory setCategories={ setCategories } />
 
         {/* Listado de Gif */}
         <button onClick={ onAddCategory }>Agregar</button>
@@ -28,8 +28,8 @@ export const GiftExpertApp = () => {
                     return <li key={ category }>{ category }</li>
                 })
             }
+        {/* <li>ABC</li> */}
         </ol>
-
         {/* Gif Item */}
 
 
