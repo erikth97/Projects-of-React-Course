@@ -20,12 +20,18 @@ describe('Pruebas en <AddCategory />', () => {
         const inputValue = 'Saitama';
         //TODO:
 
-        render( <AddCategory onNewCategory={ () => {} } />);
+        render( <AddCategory onNewCategory={ () => {} } /> );
 
-        const input = screen.getAllByRole('textbox');
-        const form = screen.getAllByRole('form');
+        const input = screen.getByRole('textbox');
+        const form = screen.getByRole('form');
 
-        fireEvent.input( input, { target: { value: 'Saitama' } });
+        fireEvent.input( input, { target: { value: inputValue }})
+        fireEvent.submit( form )
+        //screen.debug();
+        expect( input.value ).toBe('');
+
+
+
     })
 
 });
