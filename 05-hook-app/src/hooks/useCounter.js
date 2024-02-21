@@ -10,6 +10,8 @@ export const useCounter = ( initialValue = 10 ) => {
     }
 
     const decrement = ( value = 1) => {
+
+        
         setCounter( counter - value );
     }
 
