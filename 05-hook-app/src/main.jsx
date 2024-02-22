@@ -10,11 +10,12 @@ import ReactDOM from 'react-dom/client'
 // import { FocusScreen } from './04-useRef/FocusScreen';
 
 import './index.css'
-import { Layout } from './05-useLayout/Layout';
+// import { Layout } from './05-useLayout/Layout';
+import { Memorize } from './06-memos/Memorize';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <Layout />
+    <Memorize />
   // </React.StrictMode>
 )
