@@ -220,3 +220,53 @@ export {
 	getCostsAnesthesia,
 	getAllCostsByHospitalId
 };
+
+//////////////////////////////////////////////////////
+import { GEN_URL, headers } from '../common/config';
+
+const fetchCostsByType = async (hospital_id: string, costType: string): Promise<any> => {
+    const response = await fetch(GEN_URL(`/api/costs/${costType}/${hospital_id}`), {
+        method: 'GET',
+        headers: headers
+    });
+
+    if (!response.ok) {
+        throw new Error(`Error en la solicitud para ${costType}: ${response.statusText}`);
+    }
+
+    try {
+        return await response.json();
+    } catch (error) {
+        throw new Error(`Error al procesar la respuesta JSON para ${costType}: ${error.message}`);
+    }
+};
+
+const getAllCostsByHospitalId = async (hospital_id: string): Promise<any> => {
+    const response = await fetch(GEN_URL(`/api/costs_by_hospital?`) + new URLSearchParams({ hospital_id }), {
+        method: 'GET',
+        headers: headers
+    });
+
+    if (!response.ok) {
+        throw new Error(`Error en la solicitud para todos los costos: ${response.statusText}`);
+    }
+
+    try {
+        return await response.json();
+    } catch (error) {
+        throw new Error(`Error al procesar la respuesta JSON para todos los costos: ${error.message}`);
+    }
+};
+
+export {
+    fetchCostsByType,
+    getAllCostsByHospitalId
+};
+
+
+const costsRoom = await fetchCostsByType(hospital_id, 'room');
+const costsSurgicalSuite = await fetchCostsByType(hospital_id, 'surgical_suite');
+// ... (hacer lo mismo para los demás tipos de costos)
+
+const allCosts = await getAllCostsByHospitalId(hospital_id);
+
