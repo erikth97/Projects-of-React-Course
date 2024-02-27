@@ -19,7 +19,7 @@ const getUserIdByEmail = async (email: string): Promise<any> => {
 export default {
     getUserIdByEmail,
 };
-
+///
 import { GEN_URL, headers } from "../common/config";
 
 /**
